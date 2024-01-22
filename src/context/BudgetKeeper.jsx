@@ -9,8 +9,22 @@ const BudgetKeeper = (props) => {
     const [totalname, setTotalname]= useState([]);
     const [totalamount, setTotalamount]= useState([]);
 
+    const addNameAndAmount = (name, amount) => {
+        setTotalname((prevNames) => [...prevNames, name]);
+        setTotalamount((prevAmount) => [...prevAmount, amount]);
+      };
+    
+      const deleteItem = (index) => {
+        const updatedNames = [...totalname];
+        const updatedAmounts = [...totalamount];
+        updatedNames.splice(index, 1);
+        updatedAmounts.splice(index, 1);
+        setTotalname(updatedNames);
+        setTotalamount(updatedAmounts);
+      };
+
     return(
-        <TotalBudget.Provider value={{totalname, setTotalname, totalamount, setTotalamount}}>
+        <TotalBudget.Provider value={{totalname, setTotalname, totalamount, setTotalamount, deleteItem}}>
         {props.children}
         
     </TotalBudget.Provider>

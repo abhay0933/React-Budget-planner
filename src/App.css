@@ -10,6 +10,10 @@ body{
   background-color: white;
   color: black;
   width: 100%;
+  background-image: url("https://www.shutterstock.com/shutterstock/photos/302216777/display_1500/stock-vector-business-and-finance-seamless-pattern-background-with-outline-icons-for-business-theme-vector-302216777.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 input {
@@ -22,15 +26,128 @@ input {
   align-items: center;
   justify-content: space-evenly;
   width: 90vw;
-  border: 1px solid red;
+  /* border: 1px solid red; */
+  margin-top: 20px;
+}
+
+.budget h3 {
+  /* border: 2px solid red; */
+  padding: 20px;
+  width: 250px;
+  border-radius: 5px;
+}
+
+.greenbox {
+  background-color: rgb(167, 250, 85);
+}
+
+.orange {
+  background-color: rgb(252, 197, 95);
+}
+
+.salmon {
+  background-color: aquamarine;
 }
 
 ul {
   list-style: none;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  gap: 20px;
+  /* border: 2px solid royalblue; */
+}
+
+.totalbudget {
+  padding: 10px;
+  border-radius: 20px;
+  margin-right: 10px;
+  /* border: none; */
+  outline: none;
+  width: 30%;
+}
+
+.budgetsubmitbtn {
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: blanchedalmond;
+  font-weight: bolder;
+}
+
+form {
+  margin-top: 20px;
+  /* gap: 20px; */
+}
+
+.amountlabel {
+  margin-left: 20px;
+}
+
+.taskaddbtn {
+  padding: 10px;
+  border-radius: 20px;
+  font-weight: bolder;
+}
+
+.name, .amount {
+  width: 300px;
+  margin: 18px;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+label {
+  font-weight: bolder;
+  font-size: larger;
 }
 
 .nameamountlist {
   display: flex;
-  border: 2px solid gray;
+  /* border: 2px solid gray; */
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border: 2px solid green; */
+  width: 90%;
+  padding: 20px;
+  border-radius: 15px;
+  font-weight: bolder;
+  font-size: larger;
+  background-image: linear-gradient(to right top, #686869, #5b585b, #504949, #423c37, #303028);
+  color: whitesmoke;
+}
+
+h1 {
+  font-size: 40px;
+  background: -webkit-linear-gradient(#0a0a0a, #83b8b3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-color: azure
+  /* border: 2px solid green; */
+}
+
+.listamount {
+  margin-right: 20px;
+}
+
+.deletebtn {
+  margin-left: 15px;
+  padding: 5px;
+  border-radius: 25px;
+  background-color: cornsilk;
+}
+
+.deleteimage {
+  width: 15px;
+  height: 15px;
 }
 

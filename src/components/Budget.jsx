@@ -19,22 +19,18 @@ const Budget = () => {
 
     const onsubmitbudget = () => {
         setTotalbudget(budget);
+        // setTotalbudget(0);
     }
 
     useEffect(() => {
-        // Parse totalBudget to ensure it's a number
         const numericTotalBudget = parseFloat(totalBudget);
       
-        // Calculate the total spent amount from the context
         const totalSpent = spentamount.totalamount.reduce((acc, amount) => acc + amount, 0);
       
-        // Parse totalSpent to ensure it's a number
         const numericTotalSpent = parseFloat(totalSpent);
       
-        // Calculate the remaining budget
         const remaining = numericTotalBudget - numericTotalSpent;
       
-        // Set spent and remainingBudget as numbers with two decimal places
         setspent(numericTotalSpent.toFixed(2));
         setremainingbudget(remaining.toFixed(2));
       }, [spentamount.totalamount, totalBudget]);
@@ -43,12 +39,12 @@ const Budget = () => {
 
     return (
         <>
-        <input type="text" placeholder="Enter Your Budget" onChange={totalBudget} />
-        <button onClick={onsubmitbudget}>Submit</button>
+        <input type="number" placeholder="Enter Your Budget" className="totalbudget" onChange={totalBudget} />
+        <button onClick={onsubmitbudget} className="budgetsubmitbtn">Submit</button>
         <div className="budget">
-        <h3>Your Budget: <span>{totalbudget}</span></h3>
-        <h3>Remaining Budget: <span>{parseInt(totalbudget-spent)}</span></h3>
-        <h3>Spent: <span>{spent}</span></h3>
+        <h3 className="greenbox">Your Budget: <span>{totalbudget}</span></h3>
+        <h3 className="orange">Remaining Budget: <span>{parseInt(totalbudget-spent)}</span></h3>
+        <h3 className="salmon">Spent: <span>{spent}</span></h3>
         </div>
         </>
     );

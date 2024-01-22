@@ -15,20 +15,32 @@ const Form = () => {
   const changeamount= (e) =>{
     setAmount(e.target.value);
     setAmount(parseFloat(e.target.value));
+
     // console.log(amount);
   }
 
   const Addnames= () => {
     things.setTotalname((prevNames) => [...prevNames, name]);
     things.setTotalamount((prevAmount) => [...prevAmount, amount]);
-    setName(""); // Clear the name input field
-    setAmount(0);
+    
     // input("");
   }
 
   const onsumitform = (e) => {
     e.preventDefault();
+    if(name===""){
+      alert("Please enter name");
+      return;
+    }
+
+    else if(amount===0){
+      alert("Please enter valid amount");
+      return;
+    }
     Addnames();
+    setName(""); 
+    setAmount(0);
+    // input("");
     // things.setTotalname(name);
   }
 
@@ -38,13 +50,13 @@ const Form = () => {
     <>
       <form onSubmit={onsumitform}>
         <label>
-          Name: <input type='text' placeholder="Enter Task" onChange={changename}/>
+          Name: <input type='text' className="name" value={name} placeholder="Enter Name" onChange={changename}/>
         </label>
-        <label>
+        <label className="amountlabel">
           Amount:
-          <input type='number' onChange={changeamount} />
+          <input type='number' className="amount" value={amount} onChange={changeamount} />
         </label>
-        <button>Add+</button>
+        <button className="taskaddbtn">Add+</button>
       </form>
     </>
   );
